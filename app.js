@@ -29,8 +29,13 @@ app.use(methodOverride("_method"))
 
 //INDEX
 app.get("/project", (req, res)=> {
-    
-    res.send("Index Page")
+    Task.find({},(err, foundTasks)=>{
+        if(err){console.log(err.message)}
+        console.log(foundTasks[0])
+        res.render('index.ejs', {
+            tasks: foundTasks
+        })
+    })
     console.log("index route running")
 })
 
@@ -52,7 +57,7 @@ app.post("/project", (req,res)=> {
         req.body.blocker=false;
     }
     Task.create(req.body, (err, createdTask)=>{
-        conseol.log(createdTask, "Created New Task")
+        console.log(createdTask, "Created New Task")
         res.redirect("/project")
     })
 })

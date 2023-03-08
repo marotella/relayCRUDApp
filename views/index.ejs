@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+
+<body>
+    <h1>Relay</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Owner</th>
+            <th>Progress</th>
+            <th>Blocker</th>
+        </tr>
+        <% for(let i=0; i < tasks.length; i++){ %>
+            <tr>
+
+                <td><a href="/project/<%=tasks[i].id; %>">
+                        <%=tasks[i].title; %>
+                    </a></td>
+                <td>
+                    <%=tasks[i].owner; %>.
+                </td>
+                <td>
+                    <%=tasks[i].progress; %>.
+                </td>
+                <td>
+                    <% if(tasks[i].blocker===true){ %>
+                        &#9940;
+                        <% } else { %>
+                            -
+                            <% } %>
+                <td>
+                    <form action="/fruits/" method="POST">
+                        <input type="submit" value="Update">
+                    </form>
+                </td>
+
+            </tr>
+
+            <% } %>
+    </table>
+</body>
+
+</html>
