@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
 
 const taskSchema = new mongoose.Schema ({
-    title: { type: String, required: true},
-    owner: {type: String, required: true},
+    title: String,
+    owner: String,
     progress: String,
     update: String,
     blocker: Boolean

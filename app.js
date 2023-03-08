@@ -28,10 +28,9 @@ app.use(methodOverride("_method"))
 
 
 //INDEX
-app.get("/project", (req, res)=> {
-    Task.find({},(err, foundTasks)=>{
-        if(err){console.log(err.message)}
-        console.log(foundTasks[0])
+app.get("/project", (req, res) => {
+    Task.find({}, (err, foundTasks) => {
+        if (err) { console.log(err.message) }
         res.render('index.ejs', {
             tasks: foundTasks
         })
@@ -41,7 +40,7 @@ app.get("/project", (req, res)=> {
 
 //NEW
 
-app.get("/project/new", (req,res)=>{
+app.get("/project/new", (req, res) => {
     res.render("new.ejs")
 })
 
@@ -50,15 +49,20 @@ app.get("/project/new", (req,res)=>{
 //UPDATE
 
 //CREATE
-app.post("/project", (req,res)=> {
-    if(req.body.blocker === "on"){
+app.post("/project", (req, res) => {
+    if (req.body.blocker === "on") {
         req.body.blocker = true;
-    }else{
-        req.body.blocker=false;
+    } else {
+        req.body.blocker = false;
     }
-    Task.create(req.body, (err, createdTask)=>{
-        console.log(createdTask, "Created New Task")
-        res.redirect("/project")
+    Task.create(req.body, (err, createdTask) => {
+        if (err) { 
+            console.log(err.message)
+            res.send(error)
+        }else {
+            console.log(createdTask, "Created New Task")
+            res.redirect("/project")
+        }
     })
 })
 
