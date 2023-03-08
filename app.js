@@ -45,6 +45,15 @@ app.get("/project/new", (req, res) => {
 })
 
 //DELETE
+app.delete("/project/:id", (req, res)=> {{
+    Task.findByIdAndDelete(req.params.id, (err, deletedTask)=> {
+        if (err){console.log(err.message)}
+        else{
+            console.log(deletedTask)
+            res.redirect("/project")
+        }
+    })
+}})
 
 //UPDATE
 

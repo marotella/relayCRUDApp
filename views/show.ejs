@@ -27,8 +27,13 @@
                         -
                         <% } %>
             <li>
-                <form action="/project/" method="POST">
+                <form action="/project/:id" method="POST">
                     <input type="submit" value="Update">
+                </form>
+            </li>
+            <li>
+                <form action="/project/<%=task.id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete">
                 </form>
             </li>
         </ul>
