@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require("express")
 const app = express()
 const mongoose = require('mongoose');
+const Task = require("./models/tasks.js")
 const methodOverride = require("method-override")
 
 
@@ -35,11 +36,27 @@ app.get("/project", (req, res)=> {
 
 //NEW
 
+app.get("/project/new", (req,res)=>{
+    res.render("new.ejs")
+})
+
 //DELTE
 
 //UPDATE
 
 //CREATE
+app.post("/project", (req,res)=> {
+    if(req.body.blocker === "on"){
+        req.body.blocker = true;
+    }else{
+        req.body.blocker=false;
+    }
+    Task.create(req.body, (err, createdTask)=>{
+        conseol.log(createdTask, "Created New Task")
+        res.redirect("/project")
+    })
+})
+
 
 //EDIT
 
