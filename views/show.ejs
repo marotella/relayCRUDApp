@@ -27,8 +27,8 @@
                         -
                         <% } %>
             <li>
-                <form action="/project/:id" method="POST">
-                    <input type="submit" value="Update">
+                <form action="/project/<%=task.id%>/edit">
+                    <button type="Edit">Edit</button>
                 </form>
             </li>
             <li>

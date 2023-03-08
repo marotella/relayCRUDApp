@@ -45,17 +45,41 @@ app.get("/project/new", (req, res) => {
 })
 
 //DELETE
-app.delete("/project/:id", (req, res)=> {{
-    Task.findByIdAndDelete(req.params.id, (err, deletedTask)=> {
-        if (err){console.log(err.message)}
-        else{
-            console.log(deletedTask)
-            res.redirect("/project")
-        }
-    })
-}})
+app.delete("/project/:id", (req, res) => {
+    {
+        Task.findByIdAndDelete(req.params.id, (err, deletedTask) => {
+            if (err) { console.log(err.message) }
+            else {
+                console.log(deletedTask)
+                res.redirect("/project")
+            }
+        })
+    }
+})
 
 //UPDATE
+app.put('project/:id', (req, res) => {
+	
+	if (req.body.blocker === "on") {
+		req.body.blocker = true
+	} else {
+		req.body.blocker = false
+	}
+
+	Task.findByIdAndUpdate(req.params.id, req.body, { new: true,}, 
+	(err, updatedTask) => {
+		if(err) {
+			console.log(err)
+			res.send(err)
+		} else {
+			console.log(updatedTask)
+			// redirect to the index route 
+			res.redirect('/project')
+		}
+
+	})
+})
+
 
 //CREATE
 app.post("/project", (req, res) => {
@@ -65,10 +89,10 @@ app.post("/project", (req, res) => {
         req.body.blocker = false;
     }
     Task.create(req.body, (err, createdTask) => {
-        if (err) { 
+        if (err) {
             console.log(err.message)
             res.send(error)
-        }else {
+        } else {
             console.log(createdTask, "Created New Task")
             res.redirect("/project")
         }
@@ -77,18 +101,25 @@ app.post("/project", (req, res) => {
 
 
 //EDIT
+app.get("/project/:id/edit", (req, res) => {
+    Task.findById(req.params.id, (err, foundTask) => (
+        res.render("edit.ejs",
+            { task: foundTask })
+    ))
+})
 
 //SHOW
-    app.get("/project/:id", (req, res)=> {
-        Task.findById(req.params.id, (err, foundTask)=>{
-            if(err){console.log(error)
-            }else{
-                res.render("show.ejs", {
-                    task: foundTask
-                })
-            }
-        })
+app.get("/project/:id", (req, res) => {
+    Task.findById(req.params.id, (err, foundTask) => {
+        if (err) {
+            console.log(error)
+        } else {
+            res.render("show.ejs", {
+                task: foundTask
+            })
+        }
     })
+})
 
 //Listener
 const PORT = process.env.PORT;
