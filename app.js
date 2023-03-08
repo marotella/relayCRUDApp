@@ -44,7 +44,7 @@ app.get("/project/new", (req, res) => {
     res.render("new.ejs")
 })
 
-//DELTE
+//DELETE
 
 //UPDATE
 
@@ -70,7 +70,16 @@ app.post("/project", (req, res) => {
 //EDIT
 
 //SHOW
-
+    app.get("/project/:id", (req, res)=> {
+        Task.findById(req.params.id, (err, foundTask)=>{
+            if(err){console.log(error)
+            }else{
+                res.render("show.ejs", {
+                    task: foundTask
+                })
+            }
+        })
+    })
 
 //Listener
 const PORT = process.env.PORT;
