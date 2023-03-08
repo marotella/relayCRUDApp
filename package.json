@@ -1,0 +1,24 @@
+{
+  "name": "relaycrudapp",
+  "version": "1.0.0",
+  "description": "An app used for collaborative project management.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marotella/relayCRUDApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marotella/relayCRUDApp/issues"
+  },
+  "homepage": "https://github.com/marotella/relayCRUDApp#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "6.10"
+  }
+}
