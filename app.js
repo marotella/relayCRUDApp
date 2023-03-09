@@ -20,6 +20,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middleware
 //Body parser: Add JSON data from request to the request object
 app.use(express.json())
+app.use(express.static('public'));
 // Body parser middleware: give us access to req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
@@ -58,7 +59,7 @@ app.delete("/project/:id", (req, res) => {
 })
 
 //UPDATE
-app.put('project/:id', (req, res) => {
+app.put('/project/:id', (req, res) => {
 	
 	if (req.body.blocker === "on") {
 		req.body.blocker = true
@@ -66,7 +67,7 @@ app.put('project/:id', (req, res) => {
 		req.body.blocker = false
 	}
 
-	Task.findByIdAndUpdate(req.params.id, req.body, { new: true,}, 
+	Task.findByIdAndUpdate(req.params.id, req.body, { new: true}, 
 	(err, updatedTask) => {
 		if(err) {
 			console.log(err)

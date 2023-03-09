@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Information</title>
-</head>
-
-<body>
-    <h1>Relay</h1>
+    <%- include ("./partials/header.ejs")%>
 
     <div class="new-task">
         <h2>Task Information</h2>
@@ -26,16 +17,15 @@
                     <% } else { %>
                         -
                         <% } %>
-            <li>
+        
+             <div class="show-buttons">          
                 <form action="/project/<%=task.id%>/edit">
-                    <button type="Edit">Edit</button>
+                    <button type="Edit" class="btn">Edit</button>
                 </form>
-            </li>
-            <li>
                 <form action="/project/<%=task.id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Delete" class="btn">
                 </form>
-            </li>
+            </div> 
         </ul>
 </body>
 

@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a New Task</title>
-</head>
-<body>
-    <h1>Relay</h1>
-
+    <%- include ("./partials/header.ejs")%>
         <div class="new-task">
             <h2>Create a New Task</h2>
-            <form action="/projects/<%=task.id%>?_method=PUT" method="POST">
+            <form action="/project/<%=task.id%>?_method=PUT" method="POST">
             <fieldset class="task-info">
               <legend>Task Template</legend>
                 <label for="title">Title</label>
                 <input type="text" name="title" placeholder="<%=task.title%>"/> </br>
                 <label for="owner">Task Owner</label>
                 <input type="text" name="owner" placeholder="<%=task.owner%>"></br>
-                <label for="progress">Task Progress</label>
-                <input type="text" name="progress" placeholder="<%=task.progres%>"/></br>
+                <label for="progress">Current Progress:</label>
+                <input list="progresses" name="progress" id="progress">
+                <datalist id="progresses" placeholder="<%=task.progres%>"></br>
+                  <option value="Not Started">
+                  <option value="In Progress">
+                  <option value="Off Track">
+                  <option value="On hold">
+                  <option value="Completed">
+                  <option value="Needs Revision"></br>
+                </datalist></br>
+                Blocker: <input type="checkbox" name="blocker" /><br />
                 <label for="update">Updates</label>
                 <textarea name="update"placeholder="<%=task.update%>"></textarea></br>
-                Blocker: <input type="checkbox" name="blocker" /><br />
             </fieldset>
-            <input type="submit" value="Update Task">
+            <input type="submit" value="Update Task" class="btn">
           </form>
         </div>
 </body>

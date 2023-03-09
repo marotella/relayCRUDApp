@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task List</title>
-</head>
-
-<body>
-    <h1>Relay</h1>
-
-    <nav>
-        <a href="/project/new">Create A New Task</a>
-        <a href="/project">Task List</a>
-    </nav>
+    <%- include ("./partials/header.ejs")%>
     <table>
         <tr>
             <th>Task</th>
             <th>Task Owner</th>
             <th>Progress</th>
             <th>Blocker</th>
+            <th></th>
         </tr>
         <% for(let i=0; i < tasks.length; i++){ %>
             <tr>
@@ -29,10 +16,10 @@
                         <%=tasks[i].title; %>
                     </a></td>
                 <td>
-                    <%=tasks[i].owner; %>.
+                    <%=tasks[i].owner; %>
                 </td>
                 <td>
-                    <%=tasks[i].progress; %>.
+                    <%=tasks[i].progress; %>
                 </td>
                 <td>
                     <% if(tasks[i].blocker===true){ %>
@@ -42,7 +29,7 @@
                             <% } %>
                 <td>
                     <form action="/project/<%=tasks[i].id%>/edit">
-                        <button type="Edit">Edit</button>
+                        <button type="Edit" class="btn"> Edit </button>
                     </form>
                 </td>
 

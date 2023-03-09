@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a New Task</title>
-</head>
-<body>
-    <h1>Relay</h1>
+    <%- include ("./partials/header.ejs")%>
 
-        <div class="new-task">
-            <h2>Create a New Task</h2>
-          <form action="/project" method="POST">
-            <fieldset class="task-info">
-              <legend>Task Template</legend>
-                <label for="title">Title</label>
-                <input type="text" name="title"/> </br>
-                <label for="owner">Task Owner</label>
-                <input type="text" name="owner"></br>
-                <label for="progress">Task Progress</label>
-                <input type="text" name="progress"/></br>
-                <label for="update">Updates</label>
-                <textarea name="update"placeholder="Give a brief update on the status of this task"></textarea></br>
-                Blocker: <input type="checkbox" name="blocker" /><br />
-            </fieldset>
-            <input type="submit" value="Create New">
-          </form>
-        </div>
+  <div class="new-task">
+    <h2>Create a New Task</h2>
+    <form action="/project" method="POST">
+      <fieldset class="task-info">
+        <legend>Task Template</legend>
+        <label for="title">Title</label>
+        <input type="text" name="title" /> </br>
+        <label for="owner">Task Owner</label>
+        <input type="text" name="owner"></br>
+        <label for="progress">Current Progress:</label>
+        <input list="progresses" name="progress" id="progress">
+        <datalist id="progresses">
+          <option value="Not Started">
+          <option value="In Progress">
+          <option value="Off Track">
+          <option value="On hold">
+          <option value="Completed">
+          <option value="Needs Revision">
+        </datalist>
+        Blocker: <input type="checkbox" name="blocker" /><br />
+        <label for="update">Updates</label>
+        <textarea name="update" placeholder="Give a brief update on the status of this task"></textarea></br>
+      </fieldset>
+      <input type="submit" value="Create New" class="btn">
+    </form>
+  </div>
 </body>
+
 </html>
