@@ -20,10 +20,16 @@
         
              <div class="show-buttons">          
                 <form action="/project/<%=task.id%>/edit">
-                    <button type="Edit" class="btn">Edit</button>
+                    <button type="Edit" class="btn"><span class="material-symbols-rounded">
+                        edit_note
+                        </span></button>
                 </form>
                 <form action="/project/<%=task.id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete" class="btn">
+                    <button type="delete" class="btn"><span class="material-symbols-rounded">
+                        delete_forever
+                        </span></button>
+                    </form>
+                        
                 </form>
             </div> 
         </ul>
