@@ -4,6 +4,24 @@ const Task = require("../models/tasks.js")
 
 //ROUTES and CONTROLLERS
 
+//custom middle ware
+const authRequired= (req, res, next) => {
+    console.log(req.session)
+    if(req.session && req.session.currentUser){
+        next() //part of express
+    }else{
+        res.redirect("/users/signin")
+        //or redirect to a sign in or registered page?
+    }
+}
+const adminAuthRequired= (req, res, next) => {
+    if(req.session.currentUser.role = "Project Lead"){
+        next() //part of express
+    }else{
+        res.send("You must be an Project Lead to delete tasks")
+        //or redirect to a sign in or registered page?
+    }
+}
 
 //INDEX
 router.get("/", (req, res) => {
@@ -18,7 +36,7 @@ router.get("/", (req, res) => {
 
 //NEW
 
-router.get("/new", (req, res) => {
+router.get("/new", authRequired, (req, res) => {
     res.render("new.ejs")
 })
 

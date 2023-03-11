@@ -2,7 +2,7 @@
 
 
 body{
-    background-image: linear-gradient(rgb(0, 149, 255), rgb(44, 42, 42));
+    background-image: linear-gradient(to bottom right, rgb(0, 149, 255), rgb(44, 42, 42));
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -110,7 +110,8 @@ input{
     padding: 5px;
     border: 1px solid rgb(21, 97, 229);
     border-radius: 5px;
-    
+    font-size: medium;
+    font-family:'Lexend', sans-serif;
 }
 
 textarea{
@@ -119,6 +120,8 @@ textarea{
     padding: 5px;
     border: 1px solid rgb(21, 97, 229);
     border-radius: 5px;
+    font-size: medium;
+    font-family:'Lexend', sans-serif;
     
 }
 

@@ -46,4 +46,10 @@ router.post("/signin", (req,res)=>{
     })
 })
 
+
+router.get("/signout", (req, res)=>{
+    req.session.destroy()
+    res.redirect("/project")
+})
+
 module.exports = router

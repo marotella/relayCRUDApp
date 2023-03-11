@@ -26,14 +26,14 @@ app.use(express.json())
 app.use(express.static('public'));
 // Body parser middleware: give us access to req.body
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"))
-app.use("/project", taskController)
 app.use(
     session({
       secret: SECRET,
       resave: false, 
       saveUninitialized: false
     }))
+app.use(methodOverride("_method"))
+app.use("/project", taskController)
 app.use("/users", userController)
   
   

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ("./partials/header.ejs")%>
+<body>
     <table>
         <tr>
             <th>Task</th>
@@ -19,22 +20,22 @@
                     <%=tasks[i].owner; %>
                 </td>
                 <td class="progress" style="<% if(tasks[i].progress === 'Completed'){ %>
-                    background-color: rgba(88, 191, 85);
+                    background-color: rgba(54, 255, 118);
                     border-radius: 36px;
                 <% } if(tasks[i].progress === 'Off Track'){ %>
-                    background-color: red;
+                    background-color: rgba(240, 35, 31);
                     border-radius: 36px;
                 <% } if(tasks[i].progress === 'In Progress'){ %>
-                    background-color: aqua;
+                    background-color: rgba(59, 231, 255);
                     border-radius: 36px;
                 <% }if(tasks[i].progress === 'Not Started'){ %>
                     background-color: magenta;
                     border-radius: 36px;
                 <% }if(tasks[i].progress === 'On hold'){ %>
-                    background-color:rgba(255, 99, 12);
+                    background-color:rgba(250, 130, 37);
                     border-radius: 36px;
                 <% }if(tasks[i].progress === 'Needs Revision'){ %>
-                    background-color: rgba(72, 27, 255);
+                    background-color: rgba(125, 62, 250);
                     border-radius: 36px;
                 <% }%>">
                     <%= tasks[i].progress %>
