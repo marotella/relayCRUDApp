@@ -7,6 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <p>sign in</p>
+    <%- include ("../partials/header.ejs")%>
+
+
+    <div class="login">
+        <form action="/users/signin" method="POST">
+          <fieldset class="singnin">
+            <legend>Sign In</legend>
+            <label for="username">Username: </label>
+            <input type="text" name="username" /> </br>
+            <label for="password">Password: </label>
+            <input type="text" name="password"></br>
+          </fieldset>
+          <input type="submit" value="Sign In" class="btn">
+
+        </form>
+      
+
+      </div>
 </body>
 </html>

@@ -4,9 +4,9 @@
     <table>
         <tr>
             <th>Task</th>
-            <th>Task Owner</th>
+            <th>Task Lead</th>
             <th>Progress</th>
-            <th>Blocker</th>
+            <th>Blocked?</th>
             <th></th>
         </tr>
         <% for(let i=0; i < tasks.length; i++){ %>
@@ -18,8 +18,26 @@
                 <td>
                     <%=tasks[i].owner; %>
                 </td>
-                <td class="progress">
-                    <%=tasks[i].progress; %>
+                <td class="progress" style="<% if(tasks[i].progress === 'Completed'){ %>
+                    background-color: rgba(88, 191, 85);
+                    border-radius: 36px;
+                <% } if(tasks[i].progress === 'Off Track'){ %>
+                    background-color: red;
+                    border-radius: 36px;
+                <% } if(tasks[i].progress === 'In Progress'){ %>
+                    background-color: aqua;
+                    border-radius: 36px;
+                <% }if(tasks[i].progress === 'Not Started'){ %>
+                    background-color: magenta;
+                    border-radius: 36px;
+                <% }if(tasks[i].progress === 'On hold'){ %>
+                    background-color:rgba(255, 99, 12);
+                    border-radius: 36px;
+                <% }if(tasks[i].progress === 'Needs Revision'){ %>
+                    background-color: rgba(72, 27, 255);
+                    border-radius: 36px;
+                <% }%>">
+                    <%= tasks[i].progress %>
                 </td>
                 <td>
                     <% if(tasks[i].blocker===true){ %>
@@ -27,6 +45,7 @@
                         <% } else { %>
                             -
                             <% } %>
+                        </td>
                 <td>
                     <form action="/project/<%=tasks[i].id%>/edit">
                         <button type="Edit" class="btn"> <span class="material-symbols-rounded">

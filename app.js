@@ -4,9 +4,11 @@ const express = require("express")
 const app = express()
 const mongoose = require('mongoose');
 const Task = require("./models/tasks.js")
+const session = require('express-session')
 const methodOverride = require("method-override")
 const taskController = require("./controllers/tasks")
 const userController = require("./controllers/users.js")
+const SECRET = process.env.SECRET
 
 // Database Connection
 mongoose.connect(process.env.DATABASE_URL);
@@ -26,7 +28,15 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
 app.use("/project", taskController)
+app.use(
+    session({
+      secret: SECRET,
+      resave: false, 
+      saveUninitialized: false
+    }))
 app.use("/users", userController)
+  
+  
 
 //Listener
 const PORT = process.env.PORT;

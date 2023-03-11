@@ -2,12 +2,16 @@
 
 
 body{
-    background-color: rgb(234, 234, 234);
-    color:rgb(15, 165, 140);
+    background-image: linear-gradient(rgb(0, 149, 255), rgb(44, 42, 42));
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
     font-family:'Lexend', sans-serif;
+    font-weight: 600;
     display: flex;
     align-items: center;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 nav {
@@ -51,9 +55,10 @@ table{
 
 
 th {
-    background-color: rgb(15, 165, 140);
+    background-color: rgb(44, 42, 42);
     color: white;
     padding: 10px;
+    border: none;
 }
 
 tr {
@@ -64,7 +69,7 @@ td {
     padding: 5px;
 }
 .btn {
-   background-color: rgb(21, 97, 229);
+   background-color: rgb(44, 42, 42);
    border: 2px outset rgb(255, 255, 255);
    font-family:'Lexend', sans-serif;
    padding:10px;
@@ -92,7 +97,7 @@ li{
 }
 
 fieldset{
-    border: 2px outset rgb(21, 97, 229);
+    border: 2px outset rgb(44, 42, 42);
 }
 
 legend {
@@ -117,22 +122,3 @@ textarea{
     
 }
 
-.progress:contains("Completed"){
-    background-color: green;
-}
-
-.progress:contains("On hold"){
-    background-color: yellow;
-}
-
-.progress:contains("Off Track"){
-    background-color: red;
-}
-
-.progress:contains("In Progress"){
-    background-color: blue;
-}
-
-.progress:contains("Needs Revision"){
-    background-color: purple;
-}

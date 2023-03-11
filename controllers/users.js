@@ -17,6 +17,7 @@ router.post("/register", (req, res)=> {
         }else {
             User.create(req.body, (err, createdUser)=>{
                 console.log(createdUser)
+                req.session.currentUser = createdUser
                 res.redirect("/project")
             })
         }
@@ -26,6 +27,23 @@ router.post("/register", (req, res)=> {
 
 router.get("/signin", (req, res)=>{
     res.render("users/signin.ejs")
+})
+
+router.post("/signin", (req,res)=>{
+    User.findOne({username: req.body.username}, (err,foundUser)=>{
+        if(foundUser){
+            const validLogin = bcrypt.compareSync(req.body.password, foundUser.password)
+            if (validLogin){
+                req.session.currentUser=foundUser
+                res.redirect("/project")
+            }else{
+                res.send("Invalid username and/or password.")
+            }
+
+        }else{
+            res.send("Invalid username and/or password.")
+        }
+    })
 })
 
 module.exports = router
