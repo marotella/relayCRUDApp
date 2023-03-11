@@ -6,22 +6,22 @@
             <form action="/project/<%=task.id%>?_method=PUT" method="POST">
             <fieldset class="task-info">
               <legend>Task Template</legend>
-                <label for="title">Title</label>
+                <label for="title">Title: </label>
                 <input type="text" name="title" placeholder="<%=task.title%>"/> </br>
-                <label for="owner">Task Owner</label>
+                <label for="owner">Task Owner: </label>
                 <input type="text" name="owner" placeholder="<%=task.owner%>"></br>
-                <label for="progress">Current Progress:</label>
-                <input list="progresses" name="progress" id="progress"></br>
-                <datalist id="progresses" placeholder="<%=task.progres%>"></br>
+                <label for="progress">Current Progress: </label>
+                <input list="progresses" name="progress" id="progress">
+                <datalist id="progresses" placeholder="<%=task.progres%>">
                   <option value="Not Started">
                   <option value="In Progress">
                   <option value="Off Track">
                   <option value="On hold">
                   <option value="Completed">
-                  <option value="Needs Revision"></br>
+                  <option value="Needs Revision">
                 </datalist></br>
-                Blocker: <input type="checkbox" name="blocker" /></br>
-                <label for="update">Updates</label>
+                Blocked? : <input type="checkbox" name="blocker" class=".checkbox"/></br>
+                <label for="update">Updates :</label>
                 <textarea name="update"placeholder="<%=task.update%>"></textarea></br>
             </fieldset>
             <input type="submit" value="Update" class="btn">

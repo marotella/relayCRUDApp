@@ -7,11 +7,11 @@
     <form action="/project" method="POST">
       <fieldset class="task-info">
         <legend>Task Template</legend>
-        <label for="title">Title</label>
+        <label for="title">Title: </label>
         <input type="text" name="title" /> </br>
-        <label for="owner">Task Owner</label>
+        <label for="owner">Task Owner: </label>
         <input type="text" name="owner"></br>
-        <label for="progress">Current Progress:</label>
+        <label for="progress">Current Progress: </label>
         <input list="progresses" name="progress" id="progress">
         <datalist id="progresses">
           <option value="Not Started">
@@ -20,9 +20,9 @@
           <option value="On hold">
           <option value="Completed">
           <option value="Needs Revision">
-        </datalist>
-        Blocker: <input type="checkbox" name="blocker" /><br />
-        <label for="update">Updates</label>
+        </datalist></br>
+        Blocked?: <input type="checkbox" name="blocker" class="checkbox" /></br>
+        <label for="update">Update: </label>
         <textarea name="update" placeholder="Give a brief update on the status of this task"></textarea></br>
       </fieldset>
       <input type="submit" value="Create" class="btn">

@@ -102,9 +102,37 @@ legend {
 input{
     color:rgb(21, 97, 229);
     margin: 5px;
-    padding: 2px;
+    padding: 5px;
+    border: 1px solid rgb(21, 97, 229);
+    border-radius: 5px;
+    
 }
 
-label {
+textarea{
+    color:rgb(21, 97, 229);
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid rgb(21, 97, 229);
+    border-radius: 5px;
     
+}
+
+.progress:contains("Completed"){
+    background-color: green;
+}
+
+.progress:contains("On hold"){
+    background-color: yellow;
+}
+
+.progress:contains("Off Track"){
+    background-color: red;
+}
+
+.progress:contains("In Progress"){
+    background-color: blue;
+}
+
+.progress:contains("Needs Revision"){
+    background-color: purple;
 }
