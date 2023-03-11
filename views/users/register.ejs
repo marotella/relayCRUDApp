@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Relay Register</title>
 </head>
 <body>
-    <p>Register</p>
+    <%- include ("../partials/header.ejs")%>
+
+    <div class="new-task">
+      <h2>Register for Relay</h2>
+      <form action="/users/register" method="POST">
+        <fieldset class="registration">
+          <legend>Create an Account</legend>
+          <label for="username">Username: </label>
+          <input type="text" name="username" /> </br>
+          <label for="role">Role: </label>
+          <input list="roles" name="role" id="role">
+          <datalist id="roles">
+            <option value="Project Lead">
+            <option value="Team Member">
+          </datalist></br>
+          <label for="password">Password: </label>
+          <input type="text" name="password"></br>
+        </fieldset>
+        <input type="submit" value="Create" class="btn">
+      </form>
+    </div>
 </body>
 </html>
