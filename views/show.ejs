@@ -26,7 +26,7 @@
             <td class="task-info">
                 <ul>
                     <li>Task Owner: <%=task.owner; %></li>
-                    <li>Due Date: <%=task.due; %></li>
+                    <li>Due Date: <%=task.due.getMonth()+1%>/<%=task.due.getDate()%>/<%=task.due.getFullYear()%></li>
                     <li>Task Progress: <%=task.progress; %></li>
 
 

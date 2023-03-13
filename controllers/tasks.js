@@ -15,13 +15,12 @@ const authRequired= (req, res, next) => {
     }
 }
 const adminAuthRequired= (req, res, next) => {
-    if(req.session.currentUser.role === "Project Lead"){
-        next() //part of express
+    if(req.session.currentUser && req.session.currentUser.role === "Project Lead"){
+        next(); //part of express
     }else{
-        res.redirect("/users/signin")
-        //or redirect to a sign in or registered page?
+        res.redirect("/users/signin");
     }
-}
+};
 
 //INDEX
 router.get("/", (req, res) => {
