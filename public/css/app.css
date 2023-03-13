@@ -2,10 +2,10 @@
 
 
 body{
-    background-image: linear-gradient(to bottom right, rgb(0, 149, 255), rgb(44, 42, 42));
+    background-image: linear-gradient( white, rgb(219, 214, 214));
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: rgb(60, 60, 60);
     font-family:'Lexend', sans-serif;
     font-weight: 600;
     display: flex;
@@ -16,8 +16,8 @@ body{
 
 nav {
     background-color: rgba(255, 255, 255, .50);
-    color: blue;
-    border: 1px outset white;    
+    color: rgba(16,105, 217);
+    border: 1px outset rgba(16,105, 217);  
     border-radius: 6px;
     margin: 10px;
     padding: 5px;
@@ -39,7 +39,7 @@ a:hover {
 }
 
 a{
-    color: rgb(21, 97, 229); 
+    color: rgba(16,105, 217); 
     text-decoration: none;
 }
 
@@ -47,18 +47,18 @@ a{
 
 
 table{
-    border: 1px outset white;
-    background-color: rgba(255, 255, 255, .50);
+    border: 1px outset rgba(16,105, 217);
+    background-color: rgba(255, 255, 255, .70);
     min-width: 500px;
     border-radius: 8px;
 }
 
 
 th {
-    background-color: rgb(44, 42, 42);
-    color: white;
+    background-color: rgba(44, 42, 42, .5);
+    color: rgba(16,105, 217);
     padding: 10px;
-    border: none;
+    border: rgba(44, 42, 42, .5);
 }
 
 tr {
@@ -69,7 +69,7 @@ td {
     padding: 5px;
 }
 .btn {
-   background-color: rgb(44, 42, 42);
+   background-color: rgba(16,105, 217);
    border: 2px outset rgb(255, 255, 255);
    font-family:'Lexend', sans-serif;
    padding:10px;
@@ -97,7 +97,7 @@ li{
 }
 
 fieldset{
-    border: 2px outset rgb(44, 42, 42);
+    border: 2px outset rgba(16,105, 217);
 }
 
 legend {
@@ -105,20 +105,20 @@ legend {
 }
 
 input{
-    color:rgb(21, 97, 229);
+    color:rgba(16,105, 217);
     margin: 5px;
     padding: 5px;
-    border: 1px solid rgb(21, 97, 229);
+    border: 1px solid rgba(16,105, 217);
     border-radius: 5px;
     font-size: medium;
     font-family:'Lexend', sans-serif;
 }
 
 textarea{
-    color:rgb(21, 97, 229);
+    color:rgba(16,105, 217);
     margin: 5px;
     padding: 5px;
-    border: 1px solid rgb(21, 97, 229);
+    border: 1px solid rgba(16,105, 217);
     border-radius: 5px;
     font-size: medium;
     font-family:'Lexend', sans-serif;

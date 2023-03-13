@@ -20,22 +20,19 @@
                     <%=tasks[i].owner; %>
                 </td>
                 <td class="progress" style="<% if(tasks[i].progress === 'Completed'){ %>
-                    background-color: rgba(54, 255, 118);
+                    background-color: #3be8b0;
                     border-radius: 36px;
                 <% } if(tasks[i].progress === 'Off Track'){ %>
-                    background-color: rgba(240, 35, 31);
+                    background-color: #fc636b;
                     border-radius: 36px;
                 <% } if(tasks[i].progress === 'In Progress'){ %>
-                    background-color: rgba(59, 231, 255);
-                    border-radius: 36px;
-                <% }if(tasks[i].progress === 'Not Started'){ %>
-                    background-color: magenta;
+                    background-color: #02ceff;
                     border-radius: 36px;
                 <% }if(tasks[i].progress === 'On hold'){ %>
-                    background-color:rgba(250, 130, 37);
+                    background-color: #ffb900;
                     border-radius: 36px;
                 <% }if(tasks[i].progress === 'Needs Revision'){ %>
-                    background-color: rgba(125, 62, 250);
+                    background-color: #6a67ce;
                     border-radius: 36px;
                 <% }%>">
                     <%= tasks[i].progress %>

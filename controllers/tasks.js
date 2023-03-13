@@ -15,10 +15,10 @@ const authRequired= (req, res, next) => {
     }
 }
 const adminAuthRequired= (req, res, next) => {
-    if(req.session.currentUser.role = "Project Lead"){
+    if(req.session.currentUser.role === "Project Lead"){
         next() //part of express
     }else{
-        res.send("You must be an Project Lead to delete tasks")
+        res.redirect("/users/signin")
         //or redirect to a sign in or registered page?
     }
 }
@@ -41,7 +41,7 @@ router.get("/new", authRequired, (req, res) => {
 })
 
 //DELETE
-router.delete("/:id", (req, res) => {
+router.delete("/:id", adminAuthRequired, (req, res) => {
     {
         Task.findByIdAndDelete(req.params.id, (err, deletedTask) => {
             if (err) { console.log(err.message) }
