@@ -2,6 +2,19 @@
 <html lang="en">
     <%- include ("./partials/header.ejs")%>
 <body>
+
+    <% const completedTasks = (tasks) => {
+        let count = 0;
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i].progress === "Completed") {
+                count++;
+            }
+        }
+        return count;
+    } %>
+    <div class="project-status">
+        <p>Current Progress:</p><progress min="0" max="<%=tasks.length%>" value="<%=completedTasks(tasks)%>"></progress>
+    </div>
     <table>
         <tr>
             <th>Task</th>
@@ -56,6 +69,7 @@
 
             <% } %>
     </table>
+
 </body>
 
 </html>

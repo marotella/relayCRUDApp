@@ -7,12 +7,14 @@
             <fieldset class="task-info">
               <legend>Task Template</legend>
                 <label for="title">Title: </label>
-                <input type="text" name="title" placeholder="<%=task.title%>"/> </br>
+                <input type="text" name="title" value="<%=task.title%>"/> </br>
                 <label for="owner">Task Owner: </label>
-                <input type="text" name="owner" placeholder="<%=task.owner%>"></br>
+                <input type="text" name="owner" value="<%=task.owner%>"></br>
+                <label for="due">Due Date: </label>
+                <input type="date" name="due" value="<%=task.due%>"></br>
                 <label for="progress">Current Progress: </label>
                 <input list="progresses" name="progress" id="progress">
-                <datalist id="progresses" placeholder="<%=task.progres%>">
+                <datalist id="progresses" value="<%=task.progres%>">
                   <option value="In Progress">
                   <option value="Off Track">
                   <option value="On hold">
@@ -21,7 +23,7 @@
                 </datalist></br>
                 Blocked? : <input type="checkbox" name="blocker" class=".checkbox"/></br>
                 <label for="update">Updates :</label>
-                <textarea name="update"placeholder="<%=task.update%>"></textarea></br>
+                <textarea name="update"value="<%=task.update%>"></textarea></br>
             </fieldset>
             <input type="submit" value="Update" class="btn">
           </form>

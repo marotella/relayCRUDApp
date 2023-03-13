@@ -23,6 +23,17 @@ nav {
     padding: 5px;
 }
 
+.project-status{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    padding: 5px;
+}
+
+progress{
+    padding: 5px;
+}
+
 .nav-link{
     padding: 10px;
     font-weight: 600;
@@ -43,13 +54,15 @@ a{
     text-decoration: none;
 }
 
-
+p {
+    padding: 5px
+}
 
 
 table{
     border: 1px outset rgba(16,105, 217);
     background-color: rgba(255, 255, 255, .70);
-    min-width: 500px;
+  
     border-radius: 8px;
 }
 
@@ -81,23 +94,32 @@ td {
 
 
 .show-table{
+    display: flex;
     justify-content: left;
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
 ul {
+    display: flex;
     align-items: left;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 li{
+    display: flex;
     padding: 5px;
     align-items: left;
+    flex-wrap: nowrap;
+    flex-direction: column;
 
 }
 
 fieldset{
     border: 2px outset rgba(16,105, 217);
+    padding: 5px;
+    margin: 5px;
 }
 
 legend {
