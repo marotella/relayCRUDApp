@@ -9,6 +9,7 @@ const methodOverride = require("method-override")
 const taskController = require("./controllers/tasks")
 const userController = require("./controllers/users.js")
 const SECRET = process.env.SECRET
+const path = require("path")
 
 // Database Connection
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -28,7 +29,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middleware
 //Body parser: Add JSON data from request to the request object
 app.use(express.json())
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 // Body parser middleware: give us access to req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(
