@@ -1,12 +1,16 @@
 const express = require("express")
 const router = express.Router()
-const User = require("../models/users")
-const bcrypt = require("bcrypt")
+const User = require("../models/users") //allows us to access the users.
+const bcrypt = require("bcrypt") //this allows us to encrypt user information for secuirty purposes
 
+
+//NEW - This displays a form that allows a user to create an account in the system.
 router.get("/register", (req, res)=>{
     res.render("users/register.ejs")
 })
 
+
+//Create  - This route creates the account in the system using the data collected on the register ejs form using the schemam in users.js
 router.post("/register", (req, res)=> {
     const salt = bcrypt.genSaltSync(10)
     req.body.password = bcrypt.hashSync(req.body.password, salt)
@@ -24,11 +28,14 @@ router.post("/register", (req, res)=> {
     })
 })
 
+//This route displays a form that allows a user to login to their account so that they can access routes that require authorization.
 
 router.get("/signin", (req, res)=>{
     res.render("users/signin.ejs")
 })
 
+
+//This route creates the session for the user once they log in that can be used to access different levels of the account.
 router.post("/signin", (req,res)=>{
     User.findOne({username: req.body.username}, (err,foundUser)=>{
         if(foundUser){
@@ -46,7 +53,7 @@ router.post("/signin", (req,res)=>{
     })
 })
 
-
+//This route ends the session for the user and signs them out of the account. It directs them back to the homepage.
 router.get("/signout", (req, res)=>{
     req.session.destroy()
     res.redirect("/")
