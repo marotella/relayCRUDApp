@@ -6,7 +6,7 @@ const taskSchema = new mongoose.Schema ({
     title: {type: String, required:true},
     owner: {type: String, required:true},
     progress: String,
-    due:{type: String, required:true},
+    due:{type: Date, required:true},
     update: String,
     blocker: Boolean
 })
