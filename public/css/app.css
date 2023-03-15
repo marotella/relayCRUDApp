@@ -165,3 +165,30 @@ img {
     padding: 1px;
 
 }
+
+.homescreen{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .50);
+    color: rgba(16,105, 217);
+    border: 1px outset rgba(16,105, 217);  
+    border-radius: 6px;
+    margin: 5px;
+    min-width: 400px;
+   
+}
+
+
+.homenav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 5px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+

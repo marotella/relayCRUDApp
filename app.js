@@ -43,6 +43,9 @@ app.use("/project", taskController)
 app.use("/users", userController)
   
 
+app.get("/", (req,res)=>{
+  res.render("home.ejs")
+})
 
 //Listener
 const PORT = process.env.PORT;

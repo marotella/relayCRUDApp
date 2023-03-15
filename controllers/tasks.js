@@ -96,7 +96,7 @@ router.post("/", (req, res) => {
 
 
 //EDIT
-router.get("/:id/edit", (req, res) => {
+router.get("/:id/edit",authRequired, (req, res) => {
     Task.findById(req.params.id, (err, foundTask) => (
         res.render("edit.ejs",
             { task: foundTask })
