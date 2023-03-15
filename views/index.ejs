@@ -34,19 +34,14 @@
                 </td>
                 <td class="progress" style="<% if(tasks[i].progress === 'Completed'){ %>
                     background-color: #3be8b0;
-                    border-radius: 36px;
                 <% } if(tasks[i].progress === 'Off Track'){ %>
                     background-color: #fc636b;
-                    border-radius: 36px;
                 <% } if(tasks[i].progress === 'In Progress'){ %>
                     background-color: #02ceff;
-                    border-radius: 36px;
                 <% }if(tasks[i].progress === 'On hold'){ %>
                     background-color: #ffb900;
-                    border-radius: 36px;
                 <% }if(tasks[i].progress === 'Needs Revision'){ %>
                     background-color: #6a67ce;
-                    border-radius: 36px;
                 <% }%>">
                     <%= tasks[i].progress %>
                 </td>
@@ -69,7 +64,7 @@
 
             <% } %>
     </table>
-
+    <%- include ("./partials/footer.ejs")%>
 </body>
 
 </html>
