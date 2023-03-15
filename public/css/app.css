@@ -158,7 +158,7 @@ textarea{
     color: rgba(16,105, 217);
     border: 1px outset rgba(16,105, 217);  
     border-radius: 6px;
-    margin: 5px;
+    margin: 10px;
 }
 
 img {
@@ -176,7 +176,7 @@ img {
     color: rgba(16,105, 217);
     border: 1px outset rgba(16,105, 217);  
     border-radius: 6px;
-    margin: 5px;
+    margin: 10px;
     min-width: 400px;
    
 }
