@@ -11,7 +11,12 @@ const userController = require("./controllers/users.js")
 const SECRET = process.env.SECRET
 
 // Database Connection
-mongoose.connect(process.env.DATABASE_URL);
+const MONGODB_URI = process.env.MONGODB_URI;
+mongoose.set("strictQuery", true) //required for it to deploy
+mongoose.connect(MONGODB_URI,{
+    useNewURLParser: false,
+})
+
 
 // Database Connection Error/Success
 // Define callback functions for various events
