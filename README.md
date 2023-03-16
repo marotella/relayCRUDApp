@@ -32,8 +32,45 @@ Users can signout of an account by clicking a sign out link in the header or foo
  - Task view to show more detailed information on individual task projects.
 
 # Wireframe:
+- Index Page:
+<img width="439" alt="Screenshot 2023-03-07 at 7 14 12 PM" src="https://user-images.githubusercontent.com/111547566/225480057-2bcb1e56-aa6f-4a41-b5c1-7e45e2d952d5.png">
+
+-New Page:
+<img width="472" alt="Screenshot 2023-03-07 at 7 13 19 PM" src="https://user-images.githubusercontent.com/111547566/225480148-f091504e-aa0d-4554-b41f-18f10ccffbc7.png">
+
+
+-Update page:
+<img width="530" alt="Screenshot 2023-03-07 at 7 16 54 PM" src="https://user-images.githubusercontent.com/111547566/225480167-265daf5b-0afd-4221-9b8d-03f4de4ab85b.png">
+
+
+-Show page:
+<img width="530" alt="Screenshot 2023-03-07 at 7 16 54 PM" src="https://user-images.githubusercontent.com/111547566/225480108-b1ead381-aeab-4e1d-988f-998a1ac297ce.png">
 
 # Screen Shots:
+Home:
+<img width="565" alt="Screenshot 2023-03-15 at 8 47 15 PM" src="https://user-images.githubusercontent.com/111547566/225480501-db103f65-0ba9-46ee-8971-ed2e6019b6c8.png">
+
+Project Overview/Index:
+<img width="569" alt="Screenshot 2023-03-15 at 8 48 14 PM" src="https://user-images.githubusercontent.com/111547566/225480582-ed55c58e-a65a-4ccc-854e-65bbaa09e9dc.png">
+
+Task Information/Show:
+<img width="507" alt="Screenshot 2023-03-15 at 8 48 40 PM" src="https://user-images.githubusercontent.com/111547566/225480639-1f2bc145-7952-42be-a128-a34bb9cc3804.png">
+
+New Task:
+<img width="448" alt="Screenshot 2023-03-15 at 8 49 23 PM" src="https://user-images.githubusercontent.com/111547566/225480811-d37323c6-7d06-4811-abdb-77fe71048074.png">
+
+Update:
+<img width="521" alt="Screenshot 2023-03-15 at 8 50 11 PM" src="https://user-images.githubusercontent.com/111547566/225481148-1ef82caa-fca3-4280-a547-fd8de430151a.png">
+
+
+Register:
+<img width="492" alt="Screenshot 2023-03-15 at 8 49 48 PM" src="https://user-images.githubusercontent.com/111547566/225480985-092a74cd-87d8-4506-a5d0-c7e663e16a8d.png">
+
+
+Sign-in:
+<img width="458" alt="Screenshot 2023-03-15 at 8 50 55 PM" src="https://user-images.githubusercontent.com/111547566/225481479-e1a9c4f2-2a21-47e2-86cb-853420a6f8ee.png">
+
+
 
 
 # Design
