@@ -32,6 +32,14 @@ Users can signout of an account by clicking a sign out link in the header or foo
  - Task view to show more detailed information on individual task projects.
 
 # Wireframe:
+Index:
+
+Show:
+
+New:
+
+Update:
+
 
 # Screen Shots:
 
