@@ -12,7 +12,13 @@ Users who are signed in with a role of "Proejct Lead" are also able to delete ta
 Users can create an account by providing and user name, password, and role. 
 Users can signout of an account by clicking a sign out link in the header or footer.
 
-
+# Approach:
+This project was meant to serve as a stripped down version of more complex PM tools like Asana and Monday for short-term goals. 
+With this in mind I approached the project by developing RESTful routes for my task Schema, route by route, using Postman to test routes before creating files using ejs in Views.
+Once my routes were created I set up a seperate controller file for the routes and got to MVC.
+Once these were established I formatted the ejs files in my views directory to get a clear layout for each page that aligned to my wireframes.
+After setting up  the layout, I expanded on the work by adding partials and and MVC for user authentication. The goal was to have "Read Me" access to anyone, but require authorization to create or update tasks. Users with the designation of Project Lead could delete tasks.
+After routes and views for users were created I worked on styling using CSS, Flexbox and Canva.
 
 # Technologies Used:
 - Javascript
