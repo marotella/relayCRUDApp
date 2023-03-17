@@ -56,7 +56,7 @@ router.post("/signin", (req,res)=>{
 //This route ends the session for the user and signs them out of the account. It directs them back to the homepage.
 router.get("/signout", (req, res)=>{
     req.session.destroy()
-    res.redirect("/")
+    res.redirect("/") //redirect back to the homepage
 })
 
 module.exports = router

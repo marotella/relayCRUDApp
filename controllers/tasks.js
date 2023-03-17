@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const Task = require("../models/tasks.js") 
+const Task = require("../models/tasks.js") //pull in the task schema to be used with routes
 
 //ROUTES and CONTROLLERS
 
@@ -36,7 +36,6 @@ router.get("/", (req, res) => {
 })
 
 //NEW allows you to make a new task if you are logged into the account if not it redirects to the login page 
-
 router.get("/new", authRequired, (req, res) => {
     res.render("new.ejs")
 })
@@ -56,14 +55,14 @@ router.delete("/:id", adminAuthRequired, (req, res) => {
 
 //UPDATE takses the data entered in the edit pages and updates the object to reflect the new data.
 router.put('/:id', (req, res) => {
-	
+	//lines below change checkbox into boolean
 	if (req.body.blocker === "on") {
 		req.body.blocker = true
 	} else {
 		req.body.blocker = false
 	}
 
-	Task.findByIdAndUpdate(req.params.id, req.body, { new: true}, 
+	Task.findByIdAndUpdate(req.params.id, req.body, { new: true},  
 	(err, updatedTask) => {
 		if(err) {
 			console.log(err)
