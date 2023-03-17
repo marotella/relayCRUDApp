@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include ("./partials/header.ejs")%>
-        <div class="new-task">
-            <h2>Edit Task</h2>
-            <form action="/project/<%=task.id%>?_method=PUT" method="POST">
-            <fieldset class="task-info">
-              <legend>Task Template</legend>
-                <label for="title">Title: </label>
-                <input type="text" name="title" value="<%=task.title%>"/> </br>
-                <label for="owner">Task Owner: </label>
-                <input type="text" name="owner" value="<%=task.owner%>"></br>
-                <label for="due">Due Date: </label>
-                <input type="date" name="due" value="<%=task.due%>"></br>
-                <label for="progress">Current Progress: </label>
-                <input list="progresses" name="progress" id="progress">
-                <datalist id="progresses" value="<%=task.progres%>">
-                  <option value="In Progress">
-                  <option value="Off Track">
-                  <option value="On hold">
-                  <option value="Completed">
-                  <option value="Needs Revision">
-                </datalist></br>
-                Blocked? : <input type="checkbox" name="blocker" class=".checkbox"/></br>
-                <label for="update">Updates :</label>
-                <textarea name="update"value="<%=task.update%>"></textarea></br>
-            </fieldset>
-            <input type="submit" value="Update" class="btn">
-          </form>
-        </div>
-        <%- include ("./partials/footer.ejs")%>
-</body>
+<%- include ("./partials/header.ejs")%>
+  <div class="new-task">
+    <h2>Edit Task</h2>
+    <form action="/project/<%=task.id%>?_method=PUT" method="POST">
+      <fieldset class="task-info">
+        <legend>Task Template</legend>
+        <label for="title">Title: </label>
+        <input type="text" name="title" value="<%=task.title%>" /> </br>
+        <label for="owner">Task Owner: </label>
+        <input type="text" name="owner" value="<%=task.owner%>"></br>
+        <label for="due">Due Date: </label>
+        <input type="date" name="due" value="<%=task.due%>"></br>
+        <label for="progress">Current Progress: </label>
+        <input list="progresses" name="progress" id="progress">
+        <datalist id="progresses" value="<%=task.progres%>">
+          <option value="In Progress">
+          <option value="Off Track">
+          <option value="On hold">
+          <option value="Completed">
+          <option value="Needs Revision">
+        </datalist></br>
+        Blocked? : <input type="checkbox" name="blocker" class=".checkbox" /></br>
+        <label for="update">Updates :</label>
+        <textarea name="update" value="<%=task.update%>"></textarea></br>
+      </fieldset>
+      <input type="submit" value="Update" class="btn">
+    </form>
+  </div>
+  <%- include ("./partials/footer.ejs")%>
+    </body>
+
 </html>

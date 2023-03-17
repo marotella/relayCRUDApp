@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include ("./partials/header.ejs")%>
-<body>
+<%- include ("./partials/header.ejs")%>
 
-    <% const completedTasks = (tasks) => {
-        let count = 0;
-        for (let i = 0; i < tasks.length; i++) {
-            if (tasks[i].progress === "Completed") {
-                count++;
-            }
-        }
-        return count;
-    } %>
-    <div class="project-status">
-        <p>Current Progress:</p><progress min="0" max="<%=tasks.length%>" value="<%=completedTasks(tasks)%>"></progress>
-    </div>
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Task Lead</th>
-            <th>Progress</th>
-            <th>Blocked?</th>
-            <th></th>
-        </tr>
-        <% for(let i=0; i < tasks.length; i++){ %>
-            <tr>
+    <body>
 
-                <td><a href="/project/<%=tasks[i].id; %>">
-                        <%=tasks[i].title; %>
-                    </a></td>
-                <td>
-                    <%=tasks[i].owner; %>
-                </td>
-                <td class="progress" style="<% if(tasks[i].progress === 'Completed'){ %>
+        <% const completedTasks=(tasks)=> {
+            let count = 0;
+            for (let i = 0; i < tasks.length; i++) { if (tasks[i].progress==="Completed" ) { count++; } } return count;
+                } %>
+                <div class="project-status">
+                    <p>Current Progress:</p><progress min="0" max="<%=tasks.length%>"
+                        value="<%=completedTasks(tasks)%>"></progress>
+                </div>
+                <table>
+                    <tr>
+                        <th>Task</th>
+                        <th>Task Lead</th>
+                        <th>Progress</th>
+                        <th>Blocked?</th>
+                        <th></th>
+                    </tr>
+                    <% for(let i=0; i < tasks.length; i++){ %>
+                        <tr>
+
+                            <td><a href="/project/<%=tasks[i].id; %>">
+                                    <%=tasks[i].title; %>
+                                </a></td>
+                            <td>
+                                <%=tasks[i].owner; %>
+                            </td>
+                            <td class="progress" style="<% if(tasks[i].progress === 'Completed'){ %>
                     background-color: #3be8b0;
                 <% } if(tasks[i].progress === 'Off Track'){ %>
                     background-color: #fc636b;
@@ -43,28 +40,28 @@
                 <% }if(tasks[i].progress === 'Needs Revision'){ %>
                     background-color: #6a67ce;
                 <% }%>">
-                    <%= tasks[i].progress %>
-                </td>
-                <td style="font-size: 36px;">
-                    <% if(tasks[i].blocker===true){ %>
-                        &#9940;
-                        <% } else { %>
-                             
-                            <% } %>
-                        </td>
-                <td>
-                    <form action="/project/<%=tasks[i].id%>/edit">
-                        <button type="Edit" class="btn"> <span class="material-symbols-rounded">
-                            edit_note
-                            </span> </button>
-                    </form>
-                </td>
+                                <%= tasks[i].progress %>
+                            </td>
+                            <td style="font-size: 36px;">
+                                <% if(tasks[i].blocker===true){ %>
+                                    &#9940;
+                                    <% } else { %>
 
-            </tr>
+                                        <% } %>
+                            </td>
+                            <td>
+                                <form action="/project/<%=tasks[i].id%>/edit">
+                                    <button type="Edit" class="btn"> <span class="material-symbols-rounded">
+                                            edit_note
+                                        </span> </button>
+                                </form>
+                            </td>
 
-            <% } %>
-    </table>
-    <%- include ("./partials/footer.ejs")%>
-</body>
+                        </tr>
+
+                        <% } %>
+                </table>
+                <%- include ("./partials/footer.ejs")%>
+    </body>
 
 </html>

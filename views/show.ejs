@@ -25,12 +25,15 @@
             </td>
             <td class="task-info">
                 <ul>
-                    <li>Task Owner: <%=task.owner; %></li>
-                    <li>Due Date: <%=task.due.getMonth()+1%>/<%=task.due.getDate()%>/<%=task.due.getFullYear()%></li>
-                    <li>Task Progress: <%=task.progress; %></li>
+                    <li>Task Owner: <%=task.owner; %>
+                    </li>
+                    <li>Due Date: <%=task.due.getMonth()+1%>/<%=task.due.getDate()%>/<%=task.due.getFullYear()%>
+                    </li>
+                    <li>Task Progress: <%=task.progress; %>
+                    </li>
 
 
-                    <li>Blockers: <% if(task.blocker===true){ %>
+                    <li>Blocked? <% if(task.blocker===true){ %>
                             &#9940;
                             <% } else { %>
                                 -
@@ -41,6 +44,6 @@
         </tr>
     </table>
     <%- include ("./partials/footer.ejs")%>
-    </body>
+        </body>
 
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include ("./partials/header.ejs")%>
+<%- include ("./partials/header.ejs")%>
 
   <div class="new-task">
     <h2>Create a New Task</h2>
@@ -22,7 +22,7 @@
           <option value="Completed">
           <option value="Needs Revision">
         </datalist></br>
-        Blocked?: <input type="checkbox" name="blocker" class="checkbox" /></br>
+        Blocked? : <input type="checkbox" name="blocker" class="checkbox" /></br>
         <label for="update">Update: </label>
         <textarea name="update" placeholder="Give a brief update on the status of this task"></textarea></br>
       </fieldset>
@@ -30,6 +30,6 @@
     </form>
   </div>
   <%- include ("./partials/footer.ejs")%>
-</body>
+    </body>
 
 </html>

@@ -1,12 +1,9 @@
-
-
-
-body{
-    background-image: linear-gradient( white, rgb(219, 214, 214));
+body {
+    background-image: linear-gradient(white, rgb(219, 214, 214));
     background-repeat: no-repeat;
     background-size: cover;
     color: rgb(60, 60, 60);
-    font-family:'Lexend', sans-serif;
+    font-family: 'Lexend', sans-serif;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -16,33 +13,33 @@ body{
 
 nav {
     background-color: rgba(255, 255, 255, .50);
-    color: rgba(16,105, 217);
-    border: 1px outset rgba(16,105, 217);  
+    color: rgba(16, 105, 217);
+    border: 1px outset rgba(16, 105, 217);
     border-radius: 6px;
     margin: 10px;
     padding: 5px;
 }
 
-.project-status{
+.project-status {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     padding: 5px;
 }
 
-.progress{
+.progress {
     padding: 5px;
     border-radius: 36px;
 }
 
-.nav-link{
+.nav-link {
     padding: 10px;
     font-weight: 600;
 }
 
-h1{
-    font-family:'Lexend', sans-serif;
-    font-weight:800;
+h1 {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
     font-size: 54px;
 }
 
@@ -50,8 +47,8 @@ a:hover {
     text-decoration: underline;
 }
 
-a{
-    color: rgba(16,105, 217); 
+a {
+    color: rgba(16, 105, 217);
     text-decoration: none;
 }
 
@@ -60,17 +57,17 @@ p {
 }
 
 
-table{
-    border: 1px outset rgba(16,105, 217);
+table {
+    border: 1px outset rgba(16, 105, 217);
     background-color: rgba(255, 255, 255, .70);
-  
+
     border-radius: 8px;
 }
 
 
 th {
     background-color: rgba(44, 42, 42, .5);
-    color: rgba(16,105, 217);
+    color: rgba(16, 105, 217);
     padding: 10px;
     border: rgba(44, 42, 42, .5);
 }
@@ -82,19 +79,20 @@ tr {
 td {
     padding: 5px;
 }
+
 .btn {
-   background-color: rgba(16,105, 217);
-   border: 2px outset rgb(255, 255, 255);
-   font-family:'Lexend', sans-serif;
-   padding:10px;
-   margin: 5px;
-   border-radius: 5px;
-   color: white;
-    
+    background-color: rgba(16, 105, 217);
+    border: 2px outset rgb(255, 255, 255);
+    font-family: 'Lexend', sans-serif;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+
 }
 
 
-.show-table{
+.show-table {
     display: flex;
     justify-content: left;
     flex-direction: row;
@@ -108,7 +106,7 @@ ul {
     flex-direction: column;
 }
 
-li{
+li {
     display: flex;
     padding: 5px;
     align-items: left;
@@ -117,8 +115,8 @@ li{
 
 }
 
-fieldset{
-    border: 2px outset rgba(16,105, 217);
+fieldset {
+    border: 2px outset rgba(16, 105, 217);
     padding: 5px;
     margin: 5px;
 }
@@ -127,25 +125,25 @@ legend {
     font-weight: 600;
 }
 
-input{
-    color:rgba(16,105, 217);
+input {
+    color: rgba(16, 105, 217);
     margin: 5px;
     padding: 5px;
-    border: 1px solid rgba(16,105, 217);
+    border: 1px solid rgba(16, 105, 217);
     border-radius: 5px;
     font-size: medium;
-    font-family:'Lexend', sans-serif;
+    font-family: 'Lexend', sans-serif;
 }
 
-textarea{
-    color:rgba(16,105, 217);
+textarea {
+    color: rgba(16, 105, 217);
     margin: 5px;
     padding: 5px;
-    border: 1px solid rgba(16,105, 217);
+    border: 1px solid rgba(16, 105, 217);
     border-radius: 5px;
     font-size: medium;
-    font-family:'Lexend', sans-serif;
-    
+    font-family: 'Lexend', sans-serif;
+
 }
 
 .footer {
@@ -155,8 +153,8 @@ textarea{
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, .50);
-    color: rgba(16,105, 217);
-    border: 1px outset rgba(16,105, 217);  
+    color: rgba(16, 105, 217);
+    border: 1px outset rgba(16, 105, 217);
     border-radius: 6px;
     margin: 10px;
 }
@@ -166,19 +164,19 @@ img {
 
 }
 
-.homescreen{
+.homescreen {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(255, 255, 255, .50);
-    color: rgba(16,105, 217);
-    border: 1px outset rgba(16,105, 217);  
+    color: rgba(16, 105, 217);
+    border: 1px outset rgba(16, 105, 217);
     border-radius: 6px;
     margin: 10px;
     min-width: 350px;
-   
+
 }
 
 
@@ -190,5 +188,3 @@ img {
     margin: 10px;
     font-size: 18px;
 }
-
-
