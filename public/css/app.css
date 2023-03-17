@@ -60,16 +60,16 @@ p {
 table {
     border: 1px outset rgba(16, 105, 217);
     background-color: rgba(255, 255, 255, .70);
-
     border-radius: 8px;
+    max-width: 500px;
 }
 
 
 th {
-    background-color: rgba(44, 42, 42, .5);
+    background-color: rgba(44, 42, 42, .2);
     color: rgba(16, 105, 217);
     padding: 10px;
-    border: rgba(44, 42, 42, .5);
+    border: 1px rgba(44, 42, 42, 0.2);
 }
 
 tr {
@@ -78,6 +78,7 @@ tr {
 
 td {
     padding: 5px;
+    font-weight: 500;
 }
 
 .btn {
@@ -112,6 +113,7 @@ li {
     align-items: left;
     flex-wrap: nowrap;
     flex-direction: column;
+    font-weight: 400;
 
 }
 
@@ -187,4 +189,12 @@ img {
     padding: 5px;
     margin: 10px;
     font-size: 18px;
+}
+
+.task-info{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 350px;
 }

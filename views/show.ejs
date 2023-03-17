@@ -33,11 +33,14 @@
                     </li>
 
 
-                    <li>Blocked? <% if(task.blocker===true){ %>
+                    <li>Blocked? <%if(task.blocker===true){ %>
                             &#9940;
                             <% } else { %>
                                 -
                                 <% } %>
+                    </li>
+                    <li>Updates: <%=task.update%>
+
                     </li>
                 </ul>
             </td>
