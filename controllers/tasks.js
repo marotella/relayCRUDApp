@@ -11,7 +11,7 @@ const authRequired= (req, res, next) => {
         next() //part of express
     }else{
         res.redirect("/users/signin")
-        //or redirect to a sign in or registered page?
+        //or redirect to a sign in 
     }
 }
 
